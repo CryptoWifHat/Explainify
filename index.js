@@ -9,7 +9,7 @@ app.get('/api/explainify', async (req, res) => {
   const { text, age } = req.query;
 
   try {
-    const response = await fetch('https://your-project-name.onrender.com/index.html')
+    const response = await fetch('https://explainify.onrender.com/index.html')
       .then(res => res.text());
 
     const result = await executeScriptInHTML(response, text, age);
