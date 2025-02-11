@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://js.puter.com/v2/"></script>
+  </head>
+  <body>
+    <div id="output"></div>
+    <script>
+      window.askPuter = async function(text, age) {
+        const role = 'Erkläre das Wort/Person "' + text + '" in einem Satz, sodass es ein' + age + '-Jähriger problemlos versteht. Antworte nur, wenn es sich um ein einzelnes Wort/Person handelt. Falls es keine Wortdefinition/Person ist (aber berücksichtige, dass Personen auch falsch geschrieben sein können), antworte mit: "Bitte gib ein einzelnes Wort/Person ein."';
+
+        try {
+          const response = await puter.ai.chat([{ role: 'user', content: role }]);
+          document.getElementById('output').textContent = response;
+          return response;
+        } catch (error) {
+          const errorMsg = 'Ein Fehler ist aufgetreten: ' + error.message;
+          document.getElementById('output').textContent = errorMsg;
+          return errorMsg;
+        }
+      };
+    </script>
+  </body>
+</html>
