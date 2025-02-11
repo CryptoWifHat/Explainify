@@ -11,8 +11,8 @@
 
         try {
           const response = await puter.ai.chat([{ role: 'user', content: role }]);
-          document.getElementById('output').textContent = response;
-          return response;
+          document.getElementById('output').textContent = response.message;  // Sicherstellen, dass die Nachricht korrekt zugewiesen wird
+          return response.message;  // Die zurückgegebene Nachricht
         } catch (error) {
           const errorMsg = 'Ein Fehler ist aufgetreten: ' + error.message;
           document.getElementById('output').textContent = errorMsg;
