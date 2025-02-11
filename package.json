@@ -1,12 +1,13 @@
 {
-  "name": "hello-api",
+  "name": "explainify",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "^4.21.2",
-    "jsdom": "^26.0.0"
+    "express": "^4.17.1",
+    "jsdom": "^16.6.0",
+    "node-fetch": "^2.6.1"
   }
 }
